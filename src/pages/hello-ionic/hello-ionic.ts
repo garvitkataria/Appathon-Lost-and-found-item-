@@ -21,7 +21,7 @@ location =
 	latitude : '',
 	longitude : ''
 };
-
+x="";
 
   constructor(private callNumber: CallNumber, private geolocation: Geolocation,private djangoProvider:DjangoProvider,private backlight: Backlight, public camera: Camera, private flashlight: Flashlight, private backgroundGeolocation: BackgroundGeolocation,private nativeAudio: NativeAudio) {
 	// this.djangoProvider.languages.subscribe(
@@ -33,8 +33,8 @@ location =
  //       	}
  //    );
  		this.nativeAudio.preloadSimple('uniqueId1', 'Internal storage/Download/1.mp3').then(
- 			(onSuccess)=>{console.log("successAudio",onSuccess)}, 
- 			(onError)=>{console.log("ErrorAudio",onError)});
+ 			(onSuccess)=>{console.log("successAudio",onSuccess),this.x=onSuccess;}, 
+ 			(onError)=>{console.log("ErrorAudio",onError);this.x=onError;});
   }
 
 
@@ -59,8 +59,13 @@ location =
 		});
 
 		this.nativeAudio.play('uniqueId1').then(
-			(onSuccess)=>{console.log("successAudio",onSuccess)}, 
- 			(onError)=>{console.log("ErrorAudio",onError)}
+			(onSuccess)=>{
+				console.log("successAudio",onSuccess);
+				this.x=onSuccess;
+		}, 
+ 			(onError)=>{console.log("ErrorAudio",onError)
+ 			this.x=onError;
+ 		}
  			);
 
 		
