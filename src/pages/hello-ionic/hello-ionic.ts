@@ -32,7 +32,7 @@ x="";
  //        	console.log(error);
  //       	}
  //    );
- 		this.nativeAudio.preloadSimple('uniqueId1', 'Internal storage/Download/1.mp3').then(
+ 		this.nativeAudio.preloadSimple('uniqueId1', 'assets/songs/RemkHaunting.mp3').then(
  			(onSuccess)=>{console.log("successAudio",onSuccess),this.x=onSuccess;}, 
  			(onError)=>{console.log("ErrorAudio",onError);this.x=onError;});
   }
