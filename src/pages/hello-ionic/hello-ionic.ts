@@ -8,7 +8,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation';
 import { CallNumber } from '@ionic-native/call-number';
 import { NativeAudio } from '@ionic-native/native-audio';
-
+import { DatePicker } from '@ionic-native/date-picker';
 @Component({
   selector: 'page-hello-ionic',
   templateUrl: 'hello-ionic.html'
@@ -23,7 +23,7 @@ location =
 };
 x="";
 
-  constructor(private callNumber: CallNumber, private geolocation: Geolocation,private djangoProvider:DjangoProvider,private backlight: Backlight, public camera: Camera, private flashlight: Flashlight, private backgroundGeolocation: BackgroundGeolocation,private nativeAudio: NativeAudio) {
+  constructor(private datePicker: DatePicker, private callNumber: CallNumber, private geolocation: Geolocation,private djangoProvider:DjangoProvider,private backlight: Backlight, public camera: Camera, private flashlight: Flashlight, private backgroundGeolocation: BackgroundGeolocation,private nativeAudio: NativeAudio) {
 	// this.djangoProvider.languages.subscribe(
  //  		res=>{
  //  			console.log(res);
@@ -68,6 +68,14 @@ x="";
  		}
  			);
 
+		this.datePicker.show({
+		  date: new Date(),
+		  mode: 'date',
+		  androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+		}).then(
+		  date => console.log('Got date: ', date),
+		  err => console.log('Error occurred while getting date: ', err)
+		);
 		
 	}
   	offlight()

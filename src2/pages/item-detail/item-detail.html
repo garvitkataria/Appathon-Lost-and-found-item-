@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ item.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + item.profilePic + ')'">
+  </div>
+
+  <div class="item-detail" padding>
+    <h2 style="font-weight: bold;color:black;">{{item.name}}</h2>
+    <!-- <p >{{item.about}}</p> -->
+    
+	  <ion-card style="padding: 7%">
+	    <!-- <img src="img/card-amsterdam.png"/> -->
+	    <div class="card-title" style="font-size:25px;">{{item.about}}</div>
+	    <div class="card-subtitle" style="font-size:20px;">
+	 <p>Latitude: {{item.latitude}}</p>
+    <p>Longitude: {{item.longitude}}</p>
+    <p>Date: {{item.date}}</p>
+</div>
+
+	  </ion-card>
+  </div>
+</ion-content>

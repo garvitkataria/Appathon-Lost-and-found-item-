@@ -20,6 +20,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation';
 import { CallNumber } from '@ionic-native/call-number';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { DatePicker } from '@ionic-native/date-picker';
 @NgModule({
   declarations: [
     MyApp,
@@ -51,6 +52,7 @@ import { NativeAudio } from '@ionic-native/native-audio';
     Geolocation,
     CallNumber,
     NativeAudio,
+    DatePicker,
   ]
 })
 export class AppModule {}
